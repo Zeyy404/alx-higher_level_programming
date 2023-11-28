@@ -3,5 +3,5 @@ def uppercase(str):
     for char in str:
         if ord(char) > 96 and ord(char) < 123:
             char = chr(ord(char) - (ord('a') - ord('A')))
-        print(f"{char}", end="")
+        print("{}".format(char), end="")
     print()
