@@ -80,7 +80,7 @@ class Square:
            None
         """
         if self.__size == 0:
-            print()
+            print("")
         else:
             [print("") for i in range(0, self.__position[1])]
             for i in range(0, self.__size):
