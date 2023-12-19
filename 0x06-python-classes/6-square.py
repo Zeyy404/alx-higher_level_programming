@@ -15,12 +15,8 @@ class Square:
         Returns:
             None
         """
-        self.size = size
-        self.position = position
-
-    def area(self):
-        """Returns: the current area of the square."""
-        return self.__size ** 2
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -72,6 +68,10 @@ class Square:
                 not all(n >= 0 for n in value)):
             raise TypeError("position should be tuple of 2 positive integers")
         self.__position = value
+
+    def area(self):
+        """Returns: the current area of the square."""
+        return self.__size ** 2
 
     def my_print(self):
         """Prints the square with the character #
