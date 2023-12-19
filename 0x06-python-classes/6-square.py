@@ -16,7 +16,7 @@ class Square:
             None
         """
         self.__size = size
-        self.__position = position
+        self.position = position
 
     def area(self):
         """Returns: the current area of the square."""
@@ -81,10 +81,10 @@ class Square:
         """
         if self.__size == 0:
             print()
-            return
-        for i in range(0, self.__position[1]):
-            print("")
-        for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
-            print("")
+        else:
+            for i in range(0, self.__position[1]):
+                print("")
+            for i in range(0, self.__size):
+                [print(" ", end="") for j in range(0, self.__position[0])]
+                [print("#", end="") for k in range(0, self.__size)]
+                print("")
