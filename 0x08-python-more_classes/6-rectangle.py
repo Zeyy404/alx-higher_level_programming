@@ -4,6 +4,8 @@
 
 class Rectangle:
 
+    number_of_instances = 0
+
     """Represent a Rectangle"""
     def __init__(self, width=0, height=0):
         """initialize a Rectangle
@@ -16,6 +18,7 @@ class Rectangle:
         """
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -74,3 +77,22 @@ class Rectangle:
     def perimeter(self):
         """Returns: the perimeter of the Rectangle"""
         return self.__width * 2 + self.__height * 2
+
+    def __str__(self):
+        """Returns: string representation of the Rectangle (#)"""
+
+        result = ""
+        for _ in range(self.__height):
+            result += '#' * self.__width + '\n'
+        return result.rstrip()
+
+    def __repr__(self):
+        """Returns: a string representation of the Rectangle for recreation"""
+
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """Prints a message when an instance of Rectangle is deleted"""
+
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1

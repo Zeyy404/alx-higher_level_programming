@@ -74,3 +74,21 @@ class Rectangle:
     def perimeter(self):
         """Returns: the perimeter of the Rectangle"""
         return self.__width * 2 + self.__height * 2
+
+    def __str__(self):
+        """Returns: string representation of the Rectangle (#)"""
+
+        result = ""
+        for _ in range(self.__height):
+            result += '#' * self.__width + '\n'
+        return result.rstrip()
+
+    def __repr__(self):
+        """Returns: a string representation of the Rectangle for recreation"""
+
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """Prints a message when an instance of Rectangle is deleted"""
+
+        print("Bye rectangle...")
