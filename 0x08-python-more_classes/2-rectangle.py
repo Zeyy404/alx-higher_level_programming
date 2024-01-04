@@ -14,8 +14,8 @@ class Rectangle:
         Returns:
             None
         """
-        self.__width = width
         self.__height = height
+        self.__width = width
 
     @property
     def width(self):
@@ -73,4 +73,6 @@ class Rectangle:
 
     def perimeter(self):
         """Returns: the perimeter of the Rectangle"""
+        if self.__width == 0 or self.__height == 0:
+            return 0
         return self.__width * 2 + self.__height * 2
