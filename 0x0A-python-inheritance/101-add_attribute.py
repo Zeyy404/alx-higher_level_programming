@@ -1,4 +1,4 @@
-#!/use/bin/python3
+#!/usr/bin/python3
 """Contains a function that adds a new attribute to an object if possible"""
 
 
