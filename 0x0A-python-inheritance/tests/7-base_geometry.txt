@@ -7,7 +7,6 @@ Using ''7-base_geometry''
 
 Checking for importing module:
 	 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
-	 >>>
 
 Checking for module docstring:
          >>> m = __import__("7-base_geometry").__doc__
