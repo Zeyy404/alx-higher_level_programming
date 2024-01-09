@@ -21,7 +21,7 @@ class Student:
         Returns:
            Dictionary containing the specified attributes and their values
         """
-        if (type(attrs) == list and
-            all(type(elem) == str for elem in attrs)):
+        if type(attrs) == list and \
+           all(type(elem) == str for elem in attrs):
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         return self.__dict__
