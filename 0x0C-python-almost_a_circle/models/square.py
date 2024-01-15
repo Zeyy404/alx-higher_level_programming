@@ -10,6 +10,14 @@ class Square(Rectangle):
         """Initailize the Square class"""
         super().__init__(size, size, x, y)
 
+    def __str__(self):
+        """Returns: string representation of the Square attributes"""
+        string = '[' + str(self.__class__.__name__) + '] '
+        string += '(' + str(self.id) + ') '
+        string += str(self.x) + '/' + str(self.y)
+        string += ' - ' + str(self.width)
+        return string
+
     @property
     def size(self):
         """Getter of the Square size"""
@@ -20,14 +28,6 @@ class Square(Rectangle):
         """Setter of the size attribute of the Square"""
         self.width = value
         self.height = value
-
-    def __str__(self):
-        """Returns: string representation of the Square attributes"""
-        string = '[' + str(self.__class__.__name__) + '] '
-        string += '(' + str(self.id) + ') '
-        string += str(self._Rectangle__x) + '/' + str(self._Rectangle__y)
-        string += ' - ' + str(self.width)
-        return string
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
