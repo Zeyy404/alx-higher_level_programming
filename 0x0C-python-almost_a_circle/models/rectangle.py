@@ -109,9 +109,9 @@ class Rectangle(Base):
            None
         """
         if not isinstance(value, int):
-            raise TypeError("x must be an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
-            raise ValueError("x must be >= 0")
+            raise ValueError("y must be >= 0")
         self.__y = value
 
     def area(self):
