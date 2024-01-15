@@ -14,8 +14,8 @@ class Square(Rectangle):
         """Returns: string representation of the Square attributes"""
         string = '[' + str(self.__class__.__name__) + '] '
         string += '(' + str(self.id) + ') '
-        string += str(self.x) + '/' + str(self.y)
-        string += ' - ' + str(self.width)
+        string += str(self._Rectangle__x) + '/' + str(self._Rectangle__y)
+        string += ' - ' + str(self._Rectangle__width)
         return string
 
     @property
