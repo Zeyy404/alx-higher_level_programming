@@ -111,7 +111,7 @@ class Base:
                     fieldnames = ["id", "size", "x", "y"]
                 list_dict = csv.DictReader(f, fieldnames=fieldnames)
                 list_dict = [dict([k, int(v)] for k, v in d.items())
-                              for d in list_dict]
+                             for d in list_dict]
                 return [cls.create(**d) for d in list_dict]
         except FileNotFoundError:
             return []
