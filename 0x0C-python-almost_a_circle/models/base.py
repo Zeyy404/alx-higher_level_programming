@@ -2,6 +2,7 @@
 """Contains the Base class definition"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -115,3 +116,43 @@ class Base:
                 return [cls.create(**d) for d in list_dict]
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Opens a window and draws all the Rectangles and Squares
+
+        Args:
+           list_rectangles (list): A list of Rectangle objects to draw
+           list_squares (list): A list of Square objects to draw
+
+        Returns:
+           None
+        """
+        luna = turtle.Turtle()
+        luna.screen.bgcolor("black")
+        luna.pensize(3)
+        luna.shape("turtle")
+
+        for obj in list_rectangles + list_squares:
+            luna.color("lightblue" if isinstance(obj, Rectangle)
+                         else "lightgreen")
+            luna.showturtle()
+            luna.up()
+            luna.goto(obj.x, obj.y)
+            luna.down()
+
+            if isinstance(obj, Rectangle):
+                for _ in range(2):
+                    luna.forward(width)
+                    luna.left(90)
+                    luna.forward(height)
+                    luna.left(90)
+
+            if isinstance(obj, Square):
+                for _ in range(4):
+                    luna.forward(size)
+                    luna.left(90)
+
+            luna.hideturtle()
+
+        luna.exitonclick()
