@@ -143,16 +143,16 @@ class Base:
 
             if isinstance(obj, Rectangle):
                 for _ in range(2):
-                    luna.forward(width)
+                    luna.forward(obj.width)
                     luna.left(90)
-                    luna.forward(height)
+                    luna.forward(obj.height)
                     luna.left(90)
 
             if isinstance(obj, Square):
                 for _ in range(4):
-                    luna.forward(size)
+                    luna.forward(obj.size)
                     luna.left(90)
 
             luna.hideturtle()
 
-        luna.exitonclick()
+        turtle.exitonclick()
