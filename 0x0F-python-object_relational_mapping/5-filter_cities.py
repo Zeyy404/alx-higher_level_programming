@@ -20,7 +20,7 @@ if __name__ == "__main__":
                    ORDER BY cities.id ASC", (sys.argv[4],))
 
     cities = cursor.fetchall()
-    if cities:
+    if cities is not None:
         print(", ".join(city[1] for city in cities))
 
     cursor.close()
