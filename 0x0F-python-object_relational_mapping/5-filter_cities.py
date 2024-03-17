@@ -15,9 +15,9 @@ if __name__ == "__main__":
     cursor = connection.cursor()
     cursor.execute("SELECT cities.id, cities.name, states.name \
                    FROM cities \
-                   INNER JOIN states ON cities.state_id = states.id \
-                   WHERE states.name LIKE BINARY %(states.name)s \
-                   ORDER BY cities.id ASC", {'states.name': sys.argv[4]})
+                   JOIN states ON cities.state_id = states.id \
+                   WHERE states.name LIKE BINARY %(state_name)s \
+                   ORDER BY cities.id ASC", {'state_name': sys.argv[4]})
 
     cities = cursor.fetchall()
     if cities:
