@@ -20,6 +20,6 @@ if __name__ == "__main__":
               .all())
 
     for city, state in cities:
-        print("{}: ({:d}) {}".format(city.state.name, city.id, city.name))
+        print("{}: ({:d}) {}".format(state.name, city.id, city.name))
 
     session.close()
