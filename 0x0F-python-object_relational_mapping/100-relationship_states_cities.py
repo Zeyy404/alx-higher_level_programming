@@ -17,10 +17,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    california = session.query(State).filter_by(name="California").first()
-
-    n_state = State(name="California")
-    n_City = City(name="San Francisco")
+    n_state = State(name='California')
+    n_City = City(name='San Francisco')
     n_state.cities.append(n_city)
     session.add(n_state)
     session.add(n_city)
