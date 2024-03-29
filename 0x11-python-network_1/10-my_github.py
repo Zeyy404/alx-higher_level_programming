@@ -14,5 +14,5 @@ if __name__ == "__main__":
     response = requests.get(url, auth=(username, password))
 
     user_data = response.json()
-    user_id = user_data['id']
+    user_id = user_data.get('id')
     print(user_id)
