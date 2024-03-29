@@ -21,5 +21,5 @@ if __name__ == "__main__":
             sha = commit['sha']
             author_name = commit['commit']['author']['name']
             print("{}: {}".format(sha, author_name))
-    except IndexError:
+    except KeyError:
         pass
