@@ -15,8 +15,7 @@ if __name__ == "__main__":
 
     commits = response.json()
 
-    for index in range(min(10, len(commits))):
-        commit = commits[index]
+    for commit in commits[:10]:
         sha = commit['sha']
         author_name = commit['commit']['author']['name']
         print(f"{sha}: {author_name}")
